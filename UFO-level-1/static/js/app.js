@@ -30,8 +30,17 @@ function runSubmit(){
 
     tableOut.html("");
 
-    tableOut.append("tr");
-    tableOut.append("td").text(filteredTable.datetime);
+    filteredTable.forEach(function(filteredTable){
+        tableOut.append("tr");
+        tableOut.append("td").text(filteredTable.datetime);
+        tableOut.append("td").text(filteredTable.city);
+        tableOut.append("td").text(filteredTable.state);
+        tableOut.append("td").text(filteredTable.country);
+        tableOut.append("td").text(filteredTable.shape);
+        tableOut.append("td").text(filteredTable.durationMinutes);
+        tableOut.append("td").text(filteredTable.comments);
+    })
+    
 
 
 };
