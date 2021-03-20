@@ -2,20 +2,24 @@
 var tableData = data;
 
 // Select the date filter id
-var filterDate = d3.select("#filters");
+var filterDate = d3.select("#Datefilters");
 // Select the city filter id
-var filterCity = d3.select("#locCity");
+var filterCity = d3.select("#Cityfilters");
 // Select the state filter id
-var filterState = d3.select("#locState");
+var filterState = d3.select("#Statefilters");
 // Select the country filter id
-var filterCountry = d3.select("#locCountry");
+var filterCountry = d3.select("#Countryfilters");
 // Select the shape filter id
-var filterShape = d3.select("multiShape");
+var filterShape = d3.select("Shapefilter");
 // Select the button id
 var button = d3.select("#filter-btn");
 
 // Creat event handlers
-filter.on("submit", runSubmit);
+filterDate.on("submit", runSubmit);
+filterCity.on("submit", runSubmit);
+filterState.on("submit", runSubmit);
+filterCountry.on("submit", runSubmit);
+filterState.on("submit", runSubmit);
 button.on("click", runSubmit);
 
 // Helper pieces for Level 2
@@ -41,16 +45,16 @@ function runSubmit(){
     var inputDate = filterDate.property("value");
 
     // Select the datetime id from the filter, get the value from the datetime id element
-    var filterDate = d3.select("#datetime");
-    var inputDate = filterDate.property("value");
+    var filterCity = d3.select("#locCity");
+    var inputCity = filterCity.property("value");
 
     // Select the datetime id from the filter, get the value from the datetime id element
-    var filterDate = d3.select("#datetime");
-    var inputDate = filterDate.property("value");
+    var filterState = d3.select("#locState");
+    var inputState = filterState.property("value");
 
     // Select the datetime id from the filter, get the value from the datetime id element
-    var filterDate = d3.select("#datetime");
-    var inputDate = filterDate.property("value");
+    var filterCountry = d3.select("#locCountry");
+    var inputCountry = filterCountry.property("value");
     // Log the entered input date and the full table data
     console.log(inputDate);
     console.log(tableData);
