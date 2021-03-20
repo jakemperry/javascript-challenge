@@ -1,10 +1,18 @@
 // from data.js
 var tableData = data;
 
-// Select the filter id
-var filter = d3.select("#filters")
+// Select the date filter id
+var filterDate = d3.select("#filters");
+// Select the city filter id
+var filterCity = d3.select("#locCity");
+// Select the state filter id
+var filterState = d3.select("#locState");
+// Select the country filter id
+var filterCountry = d3.select("#locCountry");
+// Select the shape filter id
+var filterShape = d3.select("multiShape");
 // Select the button id
-var button = d3.select("#filter-btn")
+var button = d3.select("#filter-btn");
 
 // Creat event handlers
 filter.on("submit", runSubmit);
@@ -28,10 +36,21 @@ console.log(uniqueShapes);
 function runSubmit(){
     // Prevent page refresh
     d3.event.preventDefault();
-    // Select the datetime id from the filter
-    var filterElement = d3.select("#datetime");
-    // get the value from the datetime id element
-    var inputDate = filterElement.property("value");
+    // Select the datetime id from the filter, get the value from the datetime id element
+    var filterDate = d3.select("#datetime");
+    var inputDate = filterDate.property("value");
+
+    // Select the datetime id from the filter, get the value from the datetime id element
+    var filterDate = d3.select("#datetime");
+    var inputDate = filterDate.property("value");
+
+    // Select the datetime id from the filter, get the value from the datetime id element
+    var filterDate = d3.select("#datetime");
+    var inputDate = filterDate.property("value");
+
+    // Select the datetime id from the filter, get the value from the datetime id element
+    var filterDate = d3.select("#datetime");
+    var inputDate = filterDate.property("value");
     // Log the entered input date and the full table data
     console.log(inputDate);
     console.log(tableData);
