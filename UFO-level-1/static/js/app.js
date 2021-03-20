@@ -25,4 +25,13 @@ function runSubmit(){
     var filteredTable = tableData.filter(tableData => tableData.datetime === inputDate);
 
     console.log(filteredTable);
-}
+
+    var tableOut = d3.select("#ufo-table>tbody");
+
+    tableOut.html("");
+
+    tableOut.append("tr");
+    tableOut.append("td").text(filteredTable.datetime);
+
+
+};
