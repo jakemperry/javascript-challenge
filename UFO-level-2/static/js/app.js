@@ -43,23 +43,24 @@ function runSubmit(){
     // Select the datetime id from the filter, get the value from the datetime id element
     var filterDate = d3.select("#datetime");
     var inputDate = filterDate.property("value");
+    
 
-    // Select the datetime id from the filter, get the value from the datetime id element
+    // Select the locCity id from the filter, get the value from the datetime id element
     var filterCity = d3.select("#locCity");
     var inputCity = filterCity.property("value");
 
-    // Select the datetime id from the filter, get the value from the datetime id element
+    // Select the locState id from the filter, get the value from the datetime id element
     var filterState = d3.select("#locState");
     var inputState = filterState.property("value");
 
-    // Select the datetime id from the filter, get the value from the datetime id element
+    // Select the locCountry id from the filter, get the value from the datetime id element
     var filterCountry = d3.select("#locCountry");
     var inputCountry = filterCountry.property("value");
     // Log the entered input date and the full table data
     console.log(inputDate);
     console.log(tableData);
     // Filter the table for records that match the input date
-    var filteredTable = tableData.filter(tableData => tableData.datetime === inputDate);
+    var filteredTable = tableData.filter(tableData => tableData.datetime === inputDate).filter(tableData => tableData.city === inputCity);
     // Log the filtered table data in the console
     console.log(filteredTable);
     // Select the ufo table id 
