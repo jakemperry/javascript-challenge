@@ -10,6 +10,20 @@ var button = d3.select("#filter-btn")
 filter.on("submit", runSubmit);
 button.on("click", runSubmit);
 
+// Helper pieces for Level 2
+// Get all shape values in the data.js file
+var shapes = data.map(function(record){
+    return record.shape;
+})
+console.log(shapes)
+
+// Get unique shapes, based on example from https://stackoverflow.com/questions/1960473/get-all-unique-values-in-a-javascript-array-remove-duplicates
+function onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
+  }
+var uniqueShapes = shapes.filter(onlyUnique);
+console.log(uniqueShapes); 
+
 // Event handler function
 function runSubmit(){
     // Prevent page refresh
@@ -42,15 +56,4 @@ function runSubmit(){
     })
 };
 
-// get unique values in the data.js file
-var shapes = data.map(function(record){
-    return record.shape;
-})
-console.log(shapes)
 
-// Get unique shapes, based on example from https://stackoverflow.com/questions/1960473/get-all-unique-values-in-a-javascript-array-remove-duplicates
-function onlyUnique(value, index, self) {
-    return self.indexOf(value) === index;
-  }
-var uniqueShapes = shapes.filter(onlyUnique);
-console.log(uniqueShapes); 
