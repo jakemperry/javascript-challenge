@@ -2,16 +2,16 @@
 var tableData = data;
 
 // Select the filter id
-var filter = d3.select("#filters")
+var filter = d3.select("#dateform")
 // Select the button id
 var button = d3.select("#filter-btn")
 
-// Creat event handlers
+// Create event handlers
 filter.on("submit", runSubmit);
 button.on("click", runSubmit);
 
 // Event handler function
-function runSubmit(){
+function runSubmit() {
     // Prevent page refresh
     d3.event.preventDefault();
 

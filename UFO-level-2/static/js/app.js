@@ -14,7 +14,7 @@ var filterShape = d3.select("Shapefilter");
 // Select the button id
 var button = d3.select("#filter-btn");
 
-// Creat event handlers
+// Create event handlers
 filterDate.on("submit", runSubmit);
 filterCity.on("submit", runSubmit);
 filterState.on("submit", runSubmit);
