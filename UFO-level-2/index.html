@@ -67,28 +67,29 @@
                   </div>
                   <div class="form-group Shapefilter">
                     <label for="exampleFormControlSelect2">Filter by Shapes</label>
-                    <select multiple class="form-control" id="multiShape">
-                      <option>Changing</option>
-                      <option>Chevron</option>
-                      <option>Cigar</option>
-                      <option>Circle</option>
-                      <option>Cylinder</option>
-                      <option>Cross</option>
-                      <option>Disk</option>
-                      <option>Fireball</option>
-                      <option>Flash</option>
-                      <option>Formation</option>
-                      <option>Light</option>
-                      <option>Other</option>
-                      <option>Oval</option>
-                      <option>Rectangle</option>
-                      <option>Sphere</option>
-                      <option>Teardrop</option>
-                      <option>Triangle</option>
-                      <option>Unknown</option>
+                    <select class="form-control" id="mltislct">
+                      <option value=''>Any Shape</option>
+                      <option value = 'changing'>Changing</option>
+                      <option value = 'chevron'>Chevron</option>
+                      <option value = 'cigar'>Cigar</option>
+                      <option value = 'circle'>Circle</option>
+                      <option value = 'cylinder'>Cylinder</option>
+                      <option value = 'cross'>Cross</option>
+                      <option value = 'disk'>Disk</option>
+                      <option value = 'fireball'>Fireball</option>
+                      <option value = 'flash'>Flash</option>
+                      <option value = 'formation'>Formation</option>
+                      <option value = 'light'>Light</option>
+                      <option value = 'other'>Other</option>
+                      <option value = 'oval'>Oval</option>
+                      <option value = 'rectangle'>Rectangle</option>
+                      <option value = 'sphere'>Sphere</option>
+                      <option value = 'teadrop'>Teardrop</option>
+                      <option value = 'triangle'>Triangle</option>
+                      <option value = 'unknown'>Unknown</option>
                     </select>
                   </div>
-                  <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
+                  <center><button id="filter-btn" type="button" class="btn btn-danger">Refresh Table</button></center>
                 </form>
               </div>
             </div>
@@ -96,7 +97,7 @@
         </div>
         <div class="col-md-10">
           <div id="table-area" class="">
-            <table id="ufo-table" class="table table-striped">
+            <table border = "1" id="ufo-table" class="table table-striped">
               <thead>
                 <tr>
                   <th class="table-head">Date</th>

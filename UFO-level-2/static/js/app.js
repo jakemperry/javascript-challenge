@@ -22,24 +22,19 @@ filterCountry.on("submit", runSubmit);
 filterState.on("submit", runSubmit);
 button.on("click", runSubmit);
 
-// Test the select 
-d3.select("#multiShape").on("select", function(){
-    console.log(this)
-});
+// // Helper pieces for Level 2
+// // Get all shape values in the data.js file
+// var shapes = data.map(function(record){
+//     return record.shape;
+// })
+// console.log(shapes)
 
-// Helper pieces for Level 2
-// Get all shape values in the data.js file
-var shapes = data.map(function(record){
-    return record.shape;
-})
-console.log(shapes)
-
-// Get unique shapes, based on example from https://stackoverflow.com/questions/1960473/get-all-unique-values-in-a-javascript-array-remove-duplicates
-function onlyUnique(value, index, self) {
-    return self.indexOf(value) === index;
-  }
-var uniqueShapes = shapes.filter(onlyUnique);
-console.log(uniqueShapes); 
+// // Get unique shapes, based on example from https://stackoverflow.com/questions/1960473/get-all-unique-values-in-a-javascript-array-remove-duplicates
+// function onlyUnique(value, index, self) {
+//     return self.indexOf(value) === index;
+//   }
+// var uniqueShapes = shapes.filter(onlyUnique);
+// console.log(uniqueShapes); 
 
 // Event handler function
 function runSubmit(){
@@ -60,6 +55,10 @@ function runSubmit(){
     // Select the locCountry id from the filter, get the value from the datetime id element
     var filterCountry = d3.select("#locCountry");
     var inputCountry = filterCountry.property("value");
+
+    // Select the mltislct id, get the value from the mltislct id element
+    var filterShape = d3.select("#mltislct");
+    var inputShape = filterShape.property("value");
 
     // Log the entered input date and the full table data
     console.log(inputDate);
@@ -87,8 +86,12 @@ function runSubmit(){
     if (inputCountry !== ""){
         filteredTable = filteredTable.filter(tableData => tableData.country === inputCountry);
     }
-        
-        
+
+    // if there's an input shape, then apply the filter
+    if (inputShape !== ""){
+        filteredTable = filteredTable.filter(tableData => tableData.shape === inputShape);
+    }
+
     // Log the filtered table data in the console
     console.log(filteredTable);
     // Select the ufo table id 
@@ -107,5 +110,3 @@ function runSubmit(){
         tableOut.append("td").text(filteredTable.comments);
     })
 };
-
-
