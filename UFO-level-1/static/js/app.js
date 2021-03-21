@@ -21,8 +21,12 @@ function runSubmit(){
     // Log the entered input date and the full table data
     console.log(inputDate);
     console.log(tableData);
-    // Filter the table for records that match the input date
-    var filteredTable = tableData.filter(tableData => tableData.datetime === inputDate);
+    // Set the filtered data equal to the table data to start
+    var filteredTable = tableData;
+    // if there's an input date, then apply the filter
+    if (inputDate !== ""){
+        filteredTable = filteredTable.filter(tableData => tableData.datetime === inputDate);
+    }
     // Log the filtered table data in the console
     console.log(filteredTable);
     // Select the ufo table id 
@@ -40,7 +44,4 @@ function runSubmit(){
         tableOut.append("td").text(filteredTable.durationMinutes);
         tableOut.append("td").text(filteredTable.comments);
     })
-    
-
-
 };
