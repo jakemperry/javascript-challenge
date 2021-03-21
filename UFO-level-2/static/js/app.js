@@ -22,6 +22,11 @@ filterCountry.on("submit", runSubmit);
 filterState.on("submit", runSubmit);
 button.on("click", runSubmit);
 
+// Test the select 
+d3.select("#multiShape").on("select", function(){
+    console.log(this)
+});
+
 // Helper pieces for Level 2
 // Get all shape values in the data.js file
 var shapes = data.map(function(record){
@@ -55,15 +60,35 @@ function runSubmit(){
     // Select the locCountry id from the filter, get the value from the datetime id element
     var filterCountry = d3.select("#locCountry");
     var inputCountry = filterCountry.property("value");
+
     // Log the entered input date and the full table data
     console.log(inputDate);
     console.log(tableData);
     // Filter the table for records that match the input date
-    var filteredTable = tableData
-        .filter(tableData => tableData.datetime === inputDate)
-        .filter(tableData => tableData.city === inputCity)
-        .filter(tableData => tableData.state === inputState)
-        .filter(tableData => tableData.country === inputCountry);
+    
+    // Set the filtered data equal to the table data to start
+    var filteredTable = tableData;
+    // if there's an input date, then apply the filter
+    if (inputDate !== ""){
+        filteredTable = filteredTable.filter(tableData => tableData.datetime === inputDate);
+    }
+
+    // if there's an input city, then apply the filter
+    if (inputCity !== ""){
+        filteredTable = filteredTable.filter(tableData => tableData.city === inputCity);
+    } 
+    
+    // if there's an input state, then apply the filter
+    if (inputState !== ""){
+        filteredTable = filteredTable.filter(tableData => tableData.state === inputState);
+    }
+        
+    // if there's an input country, then apply the filter
+    if (inputCountry !== ""){
+        filteredTable = filteredTable.filter(tableData => tableData.country === inputCountry);
+    }
+        
+        
     // Log the filtered table data in the console
     console.log(filteredTable);
     // Select the ufo table id 
