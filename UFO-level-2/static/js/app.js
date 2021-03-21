@@ -2,25 +2,29 @@
 var tableData = data;
 
 // Select the date filter id
-var filterDate = d3.select("#Datefilters");
+var formDate = d3.select("#dateForm");
 // Select the city filter id
-var filterCity = d3.select("#Cityfilters");
+var formCity = d3.select("#cityForm");
 // Select the state filter id
-var filterState = d3.select("#Statefilters");
+var formState = d3.select("#stateForm");
 // Select the country filter id
-var filterCountry = d3.select("#Countryfilters");
+var formCountry = d3.select("#countryForm");
 // Select the shape filter id
-var filterShape = d3.select("Shapefilter");
+var selectShape = d3.select("#shapeForm");
 // Select the button id
 var button = d3.select("#filter-btn");
+// Select the form id
+var form = d3.select("#filterForm");
 
 // Create event handlers
-filterDate.on("submit", runSubmit);
-filterCity.on("submit", runSubmit);
-filterState.on("submit", runSubmit);
-filterCountry.on("submit", runSubmit);
-filterState.on("submit", runSubmit);
+formDate.on("submit", runSubmit);
+formCity.on("submit", runSubmit);
+formState.on("submit", runSubmit);
+formCountry.on("submit", runSubmit);
+selectShape.on("change", runSubmit);
 button.on("click", runSubmit);
+form.on("submit", runSubmit);
+
 
 // // Helper pieces for Level 2
 // // Get all shape values in the data.js file
@@ -40,6 +44,7 @@ button.on("click", runSubmit);
 function runSubmit(){
     // Prevent page refresh
     d3.event.preventDefault();
+    console.log("form submit works my guy")
 
     // Select the datetime id from the filter, get the value from the datetime id element
     var filterDate = d3.select("#datetime");
@@ -58,7 +63,7 @@ function runSubmit(){
     var inputCountry = filterCountry.property("value");
 
     // Select the mltislct id, get the value from the mltislct id element
-    var filterShape = d3.select("#mltislct");
+    var filterShape = d3.select("#shapeSelect");
     var inputShape = filterShape.property("value");
 
     // Log the entered input date and the full table data
@@ -89,7 +94,7 @@ function runSubmit(){
     }
 
     // if there's an input shape, then apply the filter
-    if (inputShape !== ""){
+    if (inputShape !== "any"){
         filteredTable = filteredTable.filter(tableData => tableData.shape === inputShape);
     }
 

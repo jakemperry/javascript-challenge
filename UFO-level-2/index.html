@@ -32,7 +32,7 @@
             <div class="panel panel-default">
               <div class="panel-heading">Filter Search</div>
               <div class="panel-body">
-                <form>
+                <form id="dateForm">
                   <div class="form-group">
                     <ul class="list-group" id="Datefilters">
                       <li class="filter list-group-item">
@@ -41,6 +41,8 @@
                       </li>
                     </ul>
                   </div>
+                </form>
+                <form id="cityForm">
                   <div class="form-group">
                     <ul class="list-group" id="Cityfilters">
                       <li class="filter list-group-item">
@@ -49,6 +51,8 @@
                       </li>
                     </ul>
                   </div>
+                </form>
+                <form id="stateForm">
                   <div class="form-group">
                     <ul class="list-group" id="Statefilters">
                       <li class="filter list-group-item">
@@ -57,6 +61,8 @@
                       </li>
                     </ul>
                   </div>
+                </form>
+                <form id="countryForm">
                   <div class="form-group">
                     <ul class="list-group" id="Countryfilters">
                       <li class="filter list-group-item">
@@ -65,10 +71,12 @@
                       </li>
                     </ul>
                   </div>
+                </form>
+                <form id = 'shapeForm'>
                   <div class="form-group Shapefilter">
                     <label for="exampleFormControlSelect2">Filter by Shapes</label>
-                    <select class="form-control" id="mltislct">
-                      <option value=''>Any Shape</option>
+                    <select class="form-control" id="shapeSelect">
+                      <option value='any'>Any Shape</option>
                       <option value = 'changing'>Changing</option>
                       <option value = 'chevron'>Chevron</option>
                       <option value = 'cigar'>Cigar</option>
